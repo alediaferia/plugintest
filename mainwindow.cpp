@@ -25,6 +25,8 @@ MainWindow::MainWindow(QWidget *parent) : KXmlGuiWindow(parent)
     setCentralWidget(editor);
 
     setupGUI();
+
+    loadPlugins();
 }
 
 void MainWindow::loadPlugins()
