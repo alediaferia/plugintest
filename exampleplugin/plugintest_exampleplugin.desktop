@@ -7,16 +7,11 @@ Comment=Yooo maaaaaaaannnnNN!!!!!
 
 ServiceTypes=Plugintest/Plugin
 
-X-KDE-Library=plugintest_exampleplugin
-
-X-KDE-Shaman-plugin-type=GUI
-
-X-KDE-PluginInfo-Author=Wang Kai
-X-KDE-PluginInfo-Email=fearee@gmail.com
+X-KDE-PluginInfo-Author=Lukas Appelhans
+X-KDE-PluginInfo-Email=l.appelhans@gmx.de
 X-KDE-PluginInfo-Version=1.0
 X-KDE-PluginInfo-Category=Service
 X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-EnabledByDefault=true
-X-KDE-Library=shaman_packagedetailplugin
+X-KDE-Library=plugintest_exampleplugin
 X-KDE-PluginInfo-Name=PackageDetail
-
