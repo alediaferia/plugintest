@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Capitalize
+Comment=Capitalize word plugin for Plugintest
+ServiceTypes=Plugintest/Plugin
+Type=Service
+X-KDE-Library=plugindemo_capitalize
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PluginInfo-Category=Service
