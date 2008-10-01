@@ -4,8 +4,6 @@
 
 #include <QVariantList>
 
-using namespace Plugintest;
-
 class ExamplePlugin : public Plugin
 {
     Q_OBJECT

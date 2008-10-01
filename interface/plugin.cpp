@@ -7,17 +7,16 @@
    License as published by the Free Software Foundation; either
    version 2 of the License, or (at your option) any later version.
 */
-
 #include "plugin.h"
 #include <KTextEdit>
 
-Plugintest::Plugin::Plugin(QObject *parent) : QObject(parent)
+Plugin::Plugin(QObject *parent) : QObject(parent)
 {}
 
-Plugintest::Plugin::~Plugin()
+Plugin::~Plugin()
 {}
 
-KTextEdit* Plugintest::Plugin::editorInterface()
+KTextEdit* Plugin::editorInterface()
 {
-    return parent()->findChild<KTextEdit *>("Plugintest::EditorInterface");
+    return parent()->parent()->findChild<KTextEdit *>("Plugintest::EditorInterface");//FIXME: Nice code :D
 }

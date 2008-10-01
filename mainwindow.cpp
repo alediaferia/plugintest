@@ -9,10 +9,10 @@
 */
 
 #include "mainwindow.h"
+#include "interface/pluginloader.h"
 #include "interface/plugin.h"
 
 #include <KTextEdit>
-#include <KServiceTypeTrader>
 #include <KDebug>
 #include <kxmlguifactory.h>
 
@@ -29,21 +29,12 @@ MainWindow::MainWindow(QWidget *parent) : KXmlGuiWindow(parent)
 
 void MainWindow::loadPlugins()
 {
-    KService::List offers = KServiceTypeTrader::self()->query("Plugintest/Plugin");
+    pluginLoader = new PluginLoader(this);
+    connect(pluginLoader, SIGNAL(pluginCreated(Plugin *)), SLOT(addPlugin(Plugin *)));
+    pluginLoader->loadAllPlugins();
+}
 
-    KService::List::const_iterator iter;
-    for(iter = offers.begin(); iter < offers.end(); ++iter)
-    {
-       QString error;
-       KService::Ptr service = *iter;
-
-       Plugintest::Plugin *plugin = KService::createInstance<Plugintest::Plugin>(service, this, QVariantList(), &error);
-
-       if (plugin) {
-           kDebug() << "Load plugin";
-           guiFactory()->addClient(plugin);
-       } else {
-           kDebug() << error;
-       }
-    }
+void MainWindow::addPlugin(Plugin * plugin)
+{
+    guiFactory()->addClient(plugin);
 }

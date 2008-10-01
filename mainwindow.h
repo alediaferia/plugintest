@@ -13,6 +13,8 @@
 
 #include <KXmlGuiWindow>
 class KTextEdit;
+class PluginLoader;
+class Plugin;
 
 class MainWindow : public KXmlGuiWindow
 {
@@ -23,11 +25,12 @@ class MainWindow : public KXmlGuiWindow
     protected:
         void loadPlugins();
 
+    private slots:
+        void addPlugin(Plugin * plugin);
+
     private:
         KTextEdit *editor;
-
-
-
+        PluginLoader * pluginLoader;
 };
 
 #endif 

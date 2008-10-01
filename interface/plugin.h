@@ -11,19 +11,20 @@
 #ifndef PLUGINTEST_PLUGIN_H
 #define PLUGINTEST_PLUGIN_H
 
+#include "plugintest_macros.h"
+
 #include <kxmlguiclient.h>
 #include <QObject>
 
 class KTextEdit;
 
-namespace Plugintest {
 /** \class Plugin Plugin.h
  * \brief Plugintest's Base Plugin Class
  *
  * This is the base class for every plugin in Plugintest.
  */
 
-class Plugin : public QObject , public KXMLGUIClient
+class PLUGINTEST_EXPORT Plugin : public QObject , public KXMLGUIClient
 {
     Q_OBJECT
 
@@ -33,7 +34,6 @@ class Plugin : public QObject , public KXMLGUIClient
 
         KTextEdit* editorInterface();
 
-};
 };
 
 #endif
