@@ -40,9 +40,10 @@ void MainWindow::loadPlugins()
        Plugintest::Plugin *plugin = KService::createInstance<Plugintest::Plugin>(service, this, QVariantList(), &error);
 
        if (plugin) {
+           kDebug() << "Load plugin";
            guiFactory()->addClient(plugin);
        } else {
-           kDebug()<<error;
+           kDebug() << error;
        }
     }
 }
