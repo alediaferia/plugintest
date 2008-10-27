@@ -2,7 +2,6 @@ project(libplugintestcore)
  
 set(plugintestcore_SRCS
     plugin.cpp
-    pluginloader.cpp
 )
  
 kde4_add_library(plugintestcore SHARED ${plugintestcore_SRCS})
