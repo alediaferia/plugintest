@@ -32,7 +32,15 @@ class KDE_EXPORT Plugin : public QObject , public KXMLGUIClient
         Plugin(QObject *parent);
         virtual ~Plugin();
 
+        /**
+         * @return KTextEdit pointing to the main application editor widget
+         */
         KTextEdit* editorInterface();
+
+        /**
+         * @internal Used by the main application to correctly set the editor.
+         * Do not call from within the reimplementation.
+         */
         void setEditorInterface(KTextEdit *);
 
     private:
