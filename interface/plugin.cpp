@@ -10,7 +10,19 @@
 #include "plugin.h"
 #include <KTextEdit>
 
-Plugin::Plugin(QObject *parent) : QObject(parent)
+class Plugin::PluginPrivate {
+
+public:
+    PluginPrivate(Plugin *q):
+                  q(q),
+                  m_editor(0){}
+
+    Plugin *q;
+    KTextEdit *m_editor;
+};
+
+Plugin::Plugin(QObject *parent) : QObject(parent),
+                                  d(new PluginPrivate(this))
 {}
 
 Plugin::~Plugin()
@@ -18,5 +30,10 @@ Plugin::~Plugin()
 
 KTextEdit* Plugin::editorInterface()
 {
-    return parent()->parent()->findChild<KTextEdit *>("Plugintest::EditorInterface");//FIXME: Nice code :D
+    return d->m_editor;
+}
+
+void Plugin::setEditorInterface(KTextEdit *editor)
+{
+    d->m_editor = editor;
 }

@@ -18,7 +18,7 @@
 
 class Plugin;
 
-class PLUGINTEST_EXPORT PluginLoader : public QObject
+class PluginLoader : public QObject
 {
     Q_OBJECT
     public:

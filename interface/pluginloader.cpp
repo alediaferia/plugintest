@@ -40,7 +40,6 @@ void PluginLoader::loadAllPlugins()
        if (plugin) {
            kDebug() << "Load plugin:" << service->name();
            emit pluginCreated(plugin);
-           //guiFactory()->addClient(plugin);
        } else {
            kDebug() << error;
        }

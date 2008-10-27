@@ -24,7 +24,7 @@ class KTextEdit;
  * This is the base class for every plugin in Plugintest.
  */
 
-class PLUGINTEST_EXPORT Plugin : public QObject , public KXMLGUIClient
+class KDE_EXPORT Plugin : public QObject , public KXMLGUIClient
 {
     Q_OBJECT
 
@@ -33,6 +33,11 @@ class PLUGINTEST_EXPORT Plugin : public QObject , public KXMLGUIClient
         virtual ~Plugin();
 
         KTextEdit* editorInterface();
+        void setEditorInterface(KTextEdit *);
+
+    private:
+        class PluginPrivate;
+        PluginPrivate *d;
 
 };
 

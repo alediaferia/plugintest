@@ -14,6 +14,8 @@ add_subdirectory(interface)
 set(plugintest_SRCS
     main.cpp
     mainwindow.cpp
+    interface/plugin.cpp
+    interface/pluginloader.cpp
 )
 
 kde4_add_executable(plugintest ${plugintest_SRCS})

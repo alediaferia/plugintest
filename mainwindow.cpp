@@ -46,5 +46,6 @@ void MainWindow::loadPlugins()
 
 void MainWindow::addPlugin(Plugin * plugin)
 {
+    plugin->setEditorInterface(editor);
     guiFactory()->addClient(plugin);
 }
