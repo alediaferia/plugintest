@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<gui name="exampleplugin" version="1">
+ <MenuBar>
+  <Menu name="plugins"><text>Plugins</text>
+   <Action name="exampleplugin" />
+  </Menu>
+ </MenuBar>
+</gui>

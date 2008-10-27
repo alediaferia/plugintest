@@ -23,6 +23,7 @@ class CapitalizePlugin : public Plugin
 
     public:
         CapitalizePlugin(QObject *parent, const QVariantList &args);
+        ~CapitalizePlugin();
 
     protected slots:
         void slotCapitalize();

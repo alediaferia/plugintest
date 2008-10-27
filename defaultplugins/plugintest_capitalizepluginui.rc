@@ -2,7 +2,8 @@
 <!DOCTYPE kpartgui SYSTEM "kpartguy.dtd">
 <gui name="plugintest-capitalize" version="1">
   <MenuBar>
-    <Menu name="edit">
+    <Menu name="plugins"><text>Plugins</text>
       <Action name="capitalize_words" />
     </Menu>
+  </MenuBar>
 </gui>

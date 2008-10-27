@@ -13,7 +13,12 @@
 #include "interface/plugin.h"
 
 #include <KTextEdit>
+#include <KMenu>
+#include <KMenuBar>
+#include <KActionCollection>
+#include <KAction>
 #include <KDebug>
+#include <KLocale>
 #include <kxmlguifactory.h>
 
 MainWindow::MainWindow(QWidget *parent) : KXmlGuiWindow(parent)
@@ -23,6 +28,9 @@ MainWindow::MainWindow(QWidget *parent) : KXmlGuiWindow(parent)
     editor->setObjectName("Plugintest::EditorInterface");
 
     setCentralWidget(editor);
+
+    KMenu *plugins = new KMenu(i18n("Plugins"), menuBar());
+    actionCollection()->addAction("plugins", plugins->menuAction());
 
     setupGUI();
 

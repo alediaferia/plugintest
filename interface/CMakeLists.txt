@@ -13,6 +13,7 @@ install(TARGETS plugintestcore ${INSTALL_TARGETS_DEFAULT_ARGS})
  
 set(plugintestcore_HDRS
     plugin.h
+    plugintest_macros.h
 )
  
 install(FILES ${plugintestcore_HDRS} DESTINATION ${INCLUDE_INSTALL_DIR}/plugintest)

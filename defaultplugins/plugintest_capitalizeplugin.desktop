@@ -1,8 +1,15 @@
 [Desktop Entry]
-Name=Capitalize
-Comment=Capitalize word plugin for Plugintest
-ServiceTypes=Plugintest/Plugin
 Type=Service
-X-KDE-Library=plugindemo_capitalize
-X-KDE-PluginInfo-EnabledByDefault=true
+Icon=computer
+Name=Capitalize
+Comment=Yooo maaaaaaaannnnNN!!!!!
+
+ServiceTypes=Plugintest/Plugin
+
+X-KDE-PluginInfo-Author=Alessandro Diaferia
+X-KDE-PluginInfo-Email=alediaferia@gmail.com
+X-KDE-PluginInfo-Version=1.0
 X-KDE-PluginInfo-Category=Service
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-Library=plugintest_capitalizeplugin

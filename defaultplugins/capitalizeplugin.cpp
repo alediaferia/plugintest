@@ -9,36 +9,36 @@
 */ 
 
 #include "capitalizeplugin.h"
-#include "plugintest_macros.h"
+#include <plugintest_macros.h>
 
 #include <KAction>
 #include <KGenericFactory>
 #include <KLocale>
 #include <KActionCollection>
 #include <KTextEdit>
+#include <KDebug>
 
-// K_EXPORT_COMPONENT_FACTORY( plugintest_capitalize,
-//                             KGenericFactory<CapitalizePlugin>( "plugintest_capitalize" ) )
+#include <QTextCursor>
+
 
 PLUGINTEST_PLUGIN_EXPORT(CapitalizePlugin)
 
 CapitalizePlugin::CapitalizePlugin(QObject *parent, const QVariantList & args) : Plugin(parent)
 {
-//     setInstance(KGenericFactory<CapitalizePlugin>::instance());
-    setXMLFile("plugintest_capitalizeui.rc");
-
     action = actionCollection()->addAction("capitalize_words");
     action->setText(i18n("Capitalize Words"));
     connect(action, SIGNAL(triggered()), this, SLOT(slotCapitalize()));
+
+    setXMLFile("plugintest_capitalize/plugintest_capitalizepluginui.rc");
 }
+
+CapitalizePlugin::~CapitalizePlugin()
+{}
 
 void CapitalizePlugin::slotCapitalize()
 {
-    QString text = editorInterface()->toPlainText();
-    for ( int i=0; i != -1; ) {
-        /*text.at(i) = */text.at(i).toUpper();
-        i = text.indexOf( QRegExp("\\b\\w"), i+1 );
-    }
+    QString text = editorInterface()->textCursor().selectedText();
+    QString upper = text.toUpper();
 
-    editorInterface()->setText(text);
+    editorInterface()->insertPlainText(upper);
 }

@@ -25,3 +25,4 @@ add_subdirectory(exampleplugin)
 
 install(FILES interface/plugintest_plugin.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})
 install(TARGETS plugintest ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(FILES plugintestui.rc DESTINATION ${DATA_INSTALL_DIR}/plugintest)
